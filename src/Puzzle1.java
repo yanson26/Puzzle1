@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-
 import java.util.Scanner;
 
 public class Puzzle1 {
@@ -18,6 +17,5 @@ public class Puzzle1 {
         String realString = sb.toString();
 
         System.out.println(realString);
-        String S = "Hallo na wie gehts?";
     }
 }
