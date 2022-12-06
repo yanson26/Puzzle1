@@ -7,12 +7,21 @@ public class Puzzle1 {
         Scanner in = new Scanner(new File("Puzzle1.txt"));
 
         int bestSum = 0;
+        int secondBestSum = 0;
+        int thirdBestSum = 0;
         int currentSum = 0;
         while(in.hasNext()){
             String s = in.nextLine();
             if(s.equals("")){
                 if(currentSum > bestSum){
+                    thirdBestSum = secondBestSum;
+                    secondBestSum = bestSum;
                     bestSum = currentSum;
+                } else if(currentSum > secondBestSum){
+                    thirdBestSum = secondBestSum;
+                    secondBestSum = currentSum;
+                } else if(currentSum > thirdBestSum){
+                    thirdBestSum = currentSum;
                 }
                 currentSum = 0;
             } else {
@@ -23,6 +32,6 @@ public class Puzzle1 {
         in.close();
 
 
-        System.out.println(bestSum);
+        System.out.println(bestSum+secondBestSum+thirdBestSum);
     }
 }
